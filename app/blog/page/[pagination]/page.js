@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Pagination from '../../../components/pagination'
 import { getAllBlogs, blogsPerPage } from '../../../util/mdQueries'
 
-const Blog = async(props) => {
+const PaginationPage = async(props) => {
   const { blogs, numberPages } = await getAllBlogs()
   const currentPage = props.params.pagination
   const limitedBlogs = blogs.slice((currentPage - 1) * blogsPerPage, currentPage * blogsPerPage)
@@ -21,7 +21,7 @@ const Blog = async(props) => {
           <p>{blog.frontmatter.date}</p>
           <Link href={`/blog/${blog.slug}`}>Read More</Link>
         </div>
-        <div>
+        <div className="blogImg">
           <Image src={blog.frontmatter.image} alt="card-image" height={300} width={1000} quality={90} priority={true} />
         </div>
       </div>
@@ -30,7 +30,7 @@ const Blog = async(props) => {
   )
 }
 
-export default Blog
+export default PaginationPage
 
 export async function generateStaticParams() {
   const { numberPages } = await getAllBlogs()
