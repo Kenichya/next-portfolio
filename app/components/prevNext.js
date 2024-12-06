@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-const { default: Link } = require("next/link")
+//const { default: Link } = require("next/link")
 
 const prevNext = (props) => {
   return (

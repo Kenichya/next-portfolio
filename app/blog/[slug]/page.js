@@ -1,6 +1,6 @@
 // [slug]/page.js
 
-import { getAllBlogs } from '@/app/util/mdQueries'
+import { getAllBlogs, getSingleBlog } from '../../util/mdQueries'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import PrevNext from '../../components/prevNext'

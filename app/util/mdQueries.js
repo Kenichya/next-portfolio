@@ -23,7 +23,7 @@ export async function getAllBlogs() {
   const orderedBlogs = blogs.sort((a, b) => {
     return b.frontmatter.id - a.frontmatter.id
   })
-  const numberPages = Math.ceil(orderdBlogs.length / blogsPerPage)
+  const numberPages = Math.ceil(orderedBlogs.length / blogsPerPage)
   return {
     blogs: orderedBlogs,
     numberPages: numberPages
