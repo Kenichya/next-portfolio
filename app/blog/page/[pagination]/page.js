@@ -24,7 +24,6 @@ const Blog = async(props) => {
         <div>
           <Image src={blog.frontmatter.image} alt="card-image" height={300} width={1000} quality={90} priority={true} />
         </div>
-        <Pagination numberPages={numberPages} />
       </div>
     )}
     </>
