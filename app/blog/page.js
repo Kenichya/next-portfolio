@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-
+import Pagination from '../components/pagination'
 import { getAllBlogs, blogsPerPage } from '../util/mdQueries'
 
 const Blog = async() => {
@@ -23,6 +23,7 @@ const Blog = async() => {
         <div>
           <Image src={blog.frontmatter.image} alt="card-image" height={300} width={1000} quality={90} priority={true} />
         </div>
+        <Pagination numberPages={numberPages} />
       </div>
     )}
     </>
