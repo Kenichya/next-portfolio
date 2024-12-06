@@ -13,7 +13,7 @@ const Blog = async(props) => {
     <>
     <h1>Blog</h1>
     <p>エンジニアの日常生活をお届けします</p>
-    {blogs.map((blog, index) =>
+    {limitedBlogs.map((blog, index) =>
       <div key={index}>
         <div>
           <h2>{blog.frontmatter.title}</h2>
