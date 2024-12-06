@@ -1,10 +1,15 @@
 // [slug]/page.js
 
+import { getAllBlogs } from '@/app/util/mdQueries'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
+import PrevNext from '../../components/prevNext'
 
 const SingleBlog = async (props) => {
   const { singleDocument } = await getSingleBlog(props)
+  const {blogs} = await getAllBlogs()
+  const prev = blogs.filter(blog => blog.frontmatter.id === singleDocument.data.id -1 )
+  const next = blogs.filter(blog => blog.frontmatter.id === singleDocument.data.id + 1)
   return (
     <>
       <div>
@@ -16,6 +21,7 @@ const SingleBlog = async (props) => {
           <p>{singleDocument.data.date}</p>
           <ReactMarkdown>{singleDocument.content}</ReactMarkdown>
         </div>
+        <PrevNext prev={prev} next={next} />
       </div>
     </>
   )
