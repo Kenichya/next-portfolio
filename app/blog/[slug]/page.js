@@ -7,7 +7,7 @@ import PrevNext from '../../components/prevNext'
 
 const SingleBlog = async (props) => {
   const { singleDocument } = await getSingleBlog(props)
-  const {blogs} = await getAllBlogs()
+  const { blogs } = await getAllBlogs()
   const prev = blogs.filter(blog => blog.frontmatter.id === singleDocument.data.id -1 )
   const next = blogs.filter(blog => blog.frontmatter.id === singleDocument.data.id + 1)
   return (

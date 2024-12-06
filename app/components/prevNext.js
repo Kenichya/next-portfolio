@@ -11,7 +11,7 @@ const prevNext = (props) => {
         <img src="/images/arrow-left.svg" alt="arrow-left" />
       </Link>
     }
-    { 0 < props.prev.length &&
+    { 0 < props.next.length &&
       <Link href={`/blog/${props.next[0].slug}`}>
         <h3>{props.next[0].frontmatter.title}</h3>
         <img src="/images/arrow-right.svg" alt="arrow-right" />
