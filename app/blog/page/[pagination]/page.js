@@ -11,21 +11,26 @@ const PaginationPage = async(props) => {
   const limitedBlogs = blogs.slice((currentPage - 1) * blogsPerPage, currentPage * blogsPerPage)
   return (
     <>
-    <h1>Blog</h1>
-    <p>エンジニアの日常生活をお届けします</p>
-    {limitedBlogs.map((blog, index) =>
-      <div key={index}>
-        <div>
-          <h2>{blog.frontmatter.title}</h2>
-          <p>{blog.frontmatter.excerpt}</p>
-          <p>{blog.frontmatter.date}</p>
-          <Link href={`/blog/${blog.slug}`}>Read More</Link>
+      <div className="wrapper">
+        <div className="container">
+          <h1>Blog</h1>
+          <p>エンジニアの日常生活をお届けします</p>
+          {limitedBlogs.map((blog, index) =>
+            <div key={index}>
+              <div>
+                <h2>{blog.frontmatter.title}</h2>
+                <p>{blog.frontmatter.excerpt}</p>
+                <p>{blog.frontmatter.date}</p>
+                <Link href={`/blog/${blog.slug}`}>Read More</Link>
+              </div>
+              <div className="blogImg">
+                <Image src={blog.frontmatter.image} alt="card-image" height={300} width={1000} quality={90} priority={true} />
+              </div>
+            </div>
+          )}
         </div>
-        <div className="blogImg">
-          <Image src={blog.frontmatter.image} alt="card-image" height={300} width={1000} quality={90} priority={true} />
-        </div>
+        <Pagination numberPages={numberPages} />
       </div>
-    )}
     </>
   )
 }
