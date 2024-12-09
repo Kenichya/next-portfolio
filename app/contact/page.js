@@ -8,8 +8,8 @@ export const metadata = {
 const Contact = () => {
   return (
     <>
-    <div className="wrapper">
-      <div className="container">
+      <div className="wrapper">
+        <div className="container">
           <h1>Contact</h1>
           <p>お気軽にご連絡ください</p>
           <form action="https://formspree.io/f/mwpkzroa" method="POST">
