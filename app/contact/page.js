@@ -1,5 +1,10 @@
 //app/contact/page.js
 
+export const metadata = {
+  title: "コンタクト",
+  description: "これはコンタクトページです",
+}
+
 const Contact = () => {
   return (
     <>

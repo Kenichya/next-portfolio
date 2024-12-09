@@ -5,6 +5,11 @@ import Image from 'next/image'
 import heroPic from '../public/images/index-hero.jpg'
 import profilePic from '../public/images/profile.jpg'
 
+export const metadata = {
+  title: "Ken-ichi Yasuda",
+  description: "Ken-ichi Yasuda のポートフォリオサイトです。"
+}
+
 const Index = () => {
   return (
     <>

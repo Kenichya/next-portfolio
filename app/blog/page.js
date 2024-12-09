@@ -5,6 +5,11 @@ import Image from 'next/image'
 import Pagination from '../components/pagination'
 import { getAllBlogs, blogsPerPage } from '../util/mdQueries'
 
+export const metadata = {
+  title: "ブログ",
+  description: "これはブログページです",
+}
+
 const Blog = async() => {
   const { blogs, numberPages } = await getAllBlogs()
   const limitedBlogs = blogs.slice(0, blogsPerPage)
